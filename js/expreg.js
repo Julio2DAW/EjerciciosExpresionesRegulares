@@ -14,6 +14,7 @@ function iniciar(){
     document.getElementById('iMatriculaVieja').onblur = comprobar //Matrícula Coche Viejo
     document.getElementById('iDNI').onblur = comprobar //DNI
     document.getElementById('iFecha').onblur = comprobar //Fecha
+    document.getElementById('iCP').onblur = comprobar //CP
     document.getElementById('iIP').onblur = comprobar //IP
 }
 
@@ -49,6 +50,14 @@ function comprobar(){
         console.log('Fecha Errónea')
     }else{
         console.log('Fecha Correcta')
+    }
+
+    //Ejercicio 5 -> CP
+    let exp5 = new RegExp(/^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/)
+    if(!document.getElementById('iCP').value.match(exp5)){
+        console.log('Código Postal Erróneo')
+    }else{
+        console.log('Código Postal Correcto')
     }
 
     //Ejercicio 15 -> IP
