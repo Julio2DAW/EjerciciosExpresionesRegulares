@@ -10,13 +10,26 @@
 window.onload=iniciar
 
 function iniciar(){
-    document.getElementById('iIP').onblur=comprobar
+    document.getElementById('iMatricula').onblur = comprobar
+    document.getElementById('iIP').onblur = comprobar
 }
 
 function comprobar(){
-    console.log('Comprobar...');
-    let exp1=new RegExp(/^(\d{1,3}\.){3}\d{1,3}/)
-    if(!document.getElementById('iIP').value.match(exp1)){
-        console.log('IP Errónea');
+
+    //Ejercicio 1 -> Matrícula Coche
+    let exp1 = new RegExp(/\d{4}[A-Z]{3}/)
+    if(!document.getElementById('iMatricula').value.match(exp1)){
+        console.log('Matrícula Errónea')
+    }else{
+        console.log('Matrícula Correcta')
     }
+
+    //Ejercicio 15 -> IP
+    let exp15 = new RegExp(/^(\d{1,3}\.){3}\d{1,3}/)
+    if(!document.getElementById('iIP').value.match(exp15)){
+        console.log('IP Errónea')
+    }else{
+        console.log('IP Correcta')
+    }
+    
 }
