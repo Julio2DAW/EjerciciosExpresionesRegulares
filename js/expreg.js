@@ -10,27 +10,36 @@
 window.onload=iniciar
 
 function iniciar(){
-    document.getElementById('iMatricula').onblur = comprobar
-    document.getElementById('iMatriculaVieja').onblur = comprobar
-    document.getElementById('iIP').onblur = comprobar
+    document.getElementById('iMatricula').onblur = comprobar //Matrícula Coche Nuevo
+    document.getElementById('iMatriculaVieja').onblur = comprobar //Matrícula Coche Viejo
+    document.getElementById('iDNI').onblur = comprobar //DNI
+    document.getElementById('iIP').onblur = comprobar //IP
 }
 
 function comprobar(){
 
-    //Ejercicio 1 -> Matrícula Coche
+    //Ejercicio 1 -> Matrícula Coche Nuevo
     let exp1 = new RegExp(/\d{4}[A-Z]{3}/)
     if(!document.getElementById('iMatricula').value.match(exp1)){
         console.log('Matrícula Errónea')
     }else{
         console.log('Matrícula Correcta')
     }
-
+    
     //Ejercicio 2 -> Matrícula Coche Viejo
     let exp2 = new RegExp(/([A-Z]{2}\d{4}[A-Z]{1,2})|([A-Z]{1}\d{5})/)
     if(!document.getElementById('iMatriculaVieja').value.match(exp2)){
         console.log('Matrícula Vieja Errónea')
     }else{
         console.log('Matrícula Vieja Correcta')
+    }
+
+    //Ejercicio 3 -> DNI
+    let exp3 = new RegExp(/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/)
+    if(!document.getElementById('iDNI').value.match(exp3)){
+        console.log('DNI Erróneo')
+    }else{
+        console.log('DNI Correcto')
     }
 
     //Ejercicio 15 -> IP
