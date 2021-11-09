@@ -15,6 +15,13 @@ function iniciar(){
     document.getElementById('iDNI').onblur = comprobar //DNI
     document.getElementById('iFecha').onblur = comprobar //Fecha
     document.getElementById('iCP').onblur = comprobar //CP
+    document.getElementById('iEmail').onblur = comprobar //Email
+    document.getElementById('iTlfnN').onblur = comprobar //TlfnN
+    document.getElementById('iMovil').onblur = comprobar //Movil
+    document.getElementById('iTlfnI').onblur = comprobar //TlfnI
+    document.getElementById('iNumE').onblur = comprobar //NumE
+    document.getElementById('iNumR').onblur = comprobar //NumR
+    document.getElementById('iURL').onblur = comprobar //URL
     document.getElementById('iIP').onblur = comprobar //IP
 }
 
@@ -58,6 +65,62 @@ function comprobar(){
         console.log('Código Postal Erróneo')
     }else{
         console.log('Código Postal Correcto')
+    }
+
+    //Ejercicio 6 -> Email
+    let exp6 = new RegExp(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/)
+    if(!document.getElementById('iEmail').value.match(exp6)){
+        console.log('Correo Erróneo')
+    }else{
+        console.log('Correo Correcto')
+    }
+
+    //Ejercicio 7 -> TlfnN
+    let exp7 = new RegExp(/(+34|0034|34)?[ -](8|9)[ -]([0-9][ -]*){8}/)
+    if(!document.getElementById('iTlfnN').value.match(exp7)){
+        console.log('Teléfono Erróneo')
+    }else{
+        console.log('Teléfono Correcto')
+    }
+
+    //Ejercicio 8 -> Movil
+    let exp8 = new RegExp(/(+34|0034|34)?[ -](6|7)[ -]([0-9][ -]*){8}/)
+    if(!document.getElementById('iMovil').value.match(exp8)){
+        console.log('Móvil Erróneo')
+    }else{
+        console.log('Móvil Correcto')
+    }
+
+    //Ejercicio 9 -> TlfnI
+    let exp9 = new RegExp(/--/)
+    if(!document.getElementById('iTlfnI').value.match(exp9)){
+        console.log('Teléfono Internacional Erróneo')
+    }else{
+        console.log('Teléfono Internacional Correcto')
+    }
+
+    //Ejercicio 10 -> NumE
+    let exp10 = new RegExp(/^\d+$/)
+    if(!document.getElementById('iNumE').value.match(exp10)){
+        console.log('Número Entero Erróneo')
+    }else{
+        console.log('Número Entero Correcto')
+    }
+
+    //Ejercicio 11 -> NumR
+    let exp11 = new RegExp(/^-?\d+(.\d+)?$/)
+    if(!document.getElementById('iNumR').value.match(exp11)){
+        console.log('Número Real Erróneo')
+    }else{
+        console.log('Número Real Correcto')
+    }
+
+    //Ejercicio 12 -> URL
+    let exp12 = new RegExp(/(http|ftp|https)://([\w-]+(?:(?:.[\w-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])/)
+    if(!document.getElementById('iURL').value.match(exp12)){
+        console.log('URL Erróneo')
+    }else{
+        console.log('URL Correcto')
     }
 
     //Ejercicio 15 -> IP
