@@ -13,6 +13,7 @@ function iniciar(){
     document.getElementById('iMatricula').onblur = comprobar //Matrícula Coche Nuevo
     document.getElementById('iMatriculaVieja').onblur = comprobar //Matrícula Coche Viejo
     document.getElementById('iDNI').onblur = comprobar //DNI
+    document.getElementById('iFecha').onblur = comprobar //Fecha
     document.getElementById('iIP').onblur = comprobar //IP
 }
 
@@ -40,6 +41,14 @@ function comprobar(){
         console.log('DNI Erróneo')
     }else{
         console.log('DNI Correcto')
+    }
+
+    //Ejercicio 4 -> Fecha
+    let exp4 = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[/\\/](19|20)\d{2}$/)
+    if(!document.getElementById('iFecha').value.match(exp4)){
+        console.log('Fecha Errónea')
+    }else{
+        console.log('Fecha Correcta')
     }
 
     //Ejercicio 15 -> IP
