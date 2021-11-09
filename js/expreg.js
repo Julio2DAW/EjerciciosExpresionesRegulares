@@ -11,6 +11,7 @@ window.onload=iniciar
 
 function iniciar(){
     document.getElementById('iMatricula').onblur = comprobar
+    document.getElementById('iMatriculaVieja').onblur = comprobar
     document.getElementById('iIP').onblur = comprobar
 }
 
@@ -22,6 +23,14 @@ function comprobar(){
         console.log('Matrícula Errónea')
     }else{
         console.log('Matrícula Correcta')
+    }
+
+    //Ejercicio 2 -> Matrícula Coche Viejo
+    let exp2 = new RegExp(/([A-Z]{2}\d{4}[A-Z]{1,2})|([A-Z]{1}\d{5})/)
+    if(!document.getElementById('iMatriculaVieja').value.match(exp2)){
+        console.log('Matrícula Vieja Errónea')
+    }else{
+        console.log('Matrícula Vieja Correcta')
     }
 
     //Ejercicio 15 -> IP
